@@ -7,7 +7,7 @@
 
 import Foundation
 
-class User: Identifiable{
+struct User: Identifiable, Decodable{
     var userId: String;
     var firstName: String;
     var lastName: String;
@@ -26,4 +26,47 @@ class User: Identifiable{
         self.phoneNumber = phoneNumber
         self.secondaryPhone = secondaryPhone
     }
+}
+
+
+extension URLSession {
+  func fetchUsers(for url: URL, completion: @escaping (Result<[User], Error>) -> Void) {
+    self.dataTask(with: url) { (data, response, error) in
+      if let error = error {
+        completion(.failure(error))
+      }
+
+      if let data = data {
+        do {
+          let toDos = try JSONDecoder().decode([User].self, from: data)
+          completion(.success(toDos))
+        } catch let decoderError {
+          completion(.failure(decoderError))
+        }
+      }
+    }.resume()
+  }
+    
+    func updateUser(for url: URL, updatedUser: User  ,completion: @escaping (Result<[User], Error>) -> Void) {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST";
+        let jsonData = try? JSONSerialization.data(withJSONObject: <#T##Any#>)
+        
+        self.dataTask(with: url) { (data, response, error) in
+        if let error = error {
+          completion(.failure(error))
+        }
+
+        if let data = data {
+          do {
+            let toDos = try JSONDecoder().decode([User].self, from: data)
+            completion(.success(toDos))
+          } catch let decoderError {
+            completion(.failure(decoderError))
+          }
+        }
+        }.resume()
+    }
+    
+    
 }

@@ -10,14 +10,15 @@ import SwiftUI
 struct ContentView: View {
     
     @State var selectedUser: User?;
-    let user1: User = User(userId: "1", firstName: "Diego", lastName: "Mendoza")
-    let user2: User = User(userId: "2", firstName: "Jackelinee", lastName: "Maldonado")
-    let user3: User = User(userId: "3", firstName: "John", lastName: "Doe")
     @State var users: [User] = [];
     @State var showDetails: Bool;
     init() {
-        self.users = [self.user1, self.user2, self.user3];
         self.showDetails = false;
+    }
+    
+    func updateUser(newUsers: [User]) {
+        self.users = newUsers;
+        print(self.users);
     }
 
     var body: some View {
@@ -29,6 +30,10 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity)
             .listStyle(.grouped)
+        }.onAppear {
+            UserService().getUsers { users in
+                self.users = users;
+            }
         }
     }
 }

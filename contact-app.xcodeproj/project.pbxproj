@@ -17,6 +17,7 @@
 		2676BD6629C6357E00195B10 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676BD6529C6357E00195B10 /* UserModel.swift */; };
 		2676BD6A29C635B200195B10 /* ContactTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676BD6929C635B200195B10 /* ContactTile.swift */; };
 		2676BD6C29C637F300195B10 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676BD6B29C637F300195B10 /* DetailsView.swift */; };
+		26C7A9FE29CF64CA002AFC53 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7A9FD29CF64CA002AFC53 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2676BD6529C6357E00195B10 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2676BD6929C635B200195B10 /* ContactTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTile.swift; sourceTree = "<group>"; };
 		2676BD6B29C637F300195B10 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		26C7A9FD29CF64CA002AFC53 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				2676BD6529C6357E00195B10 /* UserModel.swift */,
 				2676BD6929C635B200195B10 /* ContactTile.swift */,
 				2676BD6B29C637F300195B10 /* DetailsView.swift */,
+				26C7A9FD29CF64CA002AFC53 /* UserService.swift */,
 			);
 			path = "contact-app";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				2676BD3D29C634FF00195B10 /* ContentView.swift in Sources */,
 				2676BD6C29C637F300195B10 /* DetailsView.swift in Sources */,
+				26C7A9FE29CF64CA002AFC53 /* UserService.swift in Sources */,
 				2676BD6629C6357E00195B10 /* UserModel.swift in Sources */,
 				2676BD6A29C635B200195B10 /* ContactTile.swift in Sources */,
 				2676BD3B29C634FF00195B10 /* contact_appApp.swift in Sources */,
